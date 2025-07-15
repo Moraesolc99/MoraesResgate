@@ -598,7 +598,8 @@ footer {
     }
     
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
     }
     
     .section-title h2 {
@@ -612,6 +613,52 @@ footer {
     
     .logo h1 {
         font-size: 1.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .portfolio-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 90%;
+        margin-bottom: 0.5rem;
+    }
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-item i {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .portfolio-item {
+        height: 250px;
     }
 }
 
@@ -650,15 +697,19 @@ footer {
     .logo-image {
         margin-bottom: 10px;
     }
-}
-
-@media (max-width: 480px) {
-    .logo-image {
-        height: 60px;
+    .about-content {
+        flex-direction: column;
     }
     
-    .footer-logo {
-        height: 70px;
+    .about-image {
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
     }
 }
 
@@ -677,12 +728,62 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .hero-content h2 {
-        font-size: 2rem;
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle.active .fa-bars::before {
+    content: "\f00d"; /* Ícone de X do Font Awesome */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row; /* Mudado de column para row */
+        flex-wrap: wrap;
     }
     
-    .hero-logo {
-        max-width: 250px;
+    .logo {
+        flex: 1;
+        justify-content: flex-start;
+        margin-bottom: 0;
     }
+    
+    .menu-toggle {
+        display: block;
+        order: 2; /* Posiciona à direita */
+    }
+    
+    nav {
+        width: 100%;
+        order: 3; /* Posiciona abaixo */
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--primary-dark);
+        margin-top: 1rem;
+        padding: 1rem 0;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
