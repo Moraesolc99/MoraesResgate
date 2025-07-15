@@ -1,24 +1,20 @@
-// Smooth scrolling for anchor links
+// Smooth scrolling para links âncora
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Portfolio filtering
+// Filtro do portfólio
 const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterBtns.forEach(b => b.classList.remove('active'));
-        
-        // Add active class to clicked button
         btn.classList.add('active');
         
         const filter = btn.getAttribute('data-filter');
@@ -33,21 +29,30 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Form submission
-const contactForm = document.getElementById('contactForm');
+// Menu Hamburguer
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
     
-    // Simulate form submission
-    const name = document.getElementById('name').value;
-    alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entrarei em contato em breve.`);
-    
-    // Reset form
-    contactForm.reset();
+    // Alternar ícone
+    if (navMenu.classList.contains('active')) {
+        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
 });
 
-// Header background change on scroll
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -57,32 +62,4 @@ window.addEventListener('scroll', () => {
         header.style.backgroundColor = '';
         header.style.boxShadow = '';
     }
-});
-
-// Portfolio item hover effect
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.querySelector('.portfolio-overlay').style.opacity = '1';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        item.querySelector('.portfolio-overlay').style.opacity = '0';
-    });
-});
-
-// Menu Hamburguer
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('nav ul');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-});
-
-// Fechar o menu ao clicar em um link
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-    });
 });
