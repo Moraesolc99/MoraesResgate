@@ -69,3 +69,20 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
         item.querySelector('.portfolio-overlay').style.opacity = '0';
     });
 });
+
+// Menu Hamburguer
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
+// Fechar o menu ao clicar em um link
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
+});
