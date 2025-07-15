@@ -610,10 +610,10 @@ footer {
         width: 70%;
         height: auto;
         max-height: calc(100vh - 60px);
-        background: rgba(2, 13, 41, 0.575);
+        background: rgba(2, 13, 41, 0.664);
         backdrop-filter: blur(10px);
-        padding: 2rem;
-        text-align: left;
+        padding: 1.2rem;
+        text-align: center;
         box-shadow: -5px 0 15px rgb(0, 0, 0);
         transition: right 0.4s ease-in-out;
         z-index: 999;
@@ -624,7 +624,7 @@ footer {
         right: 0;
     }
     nav ul li {
-        margin: 1.5rem 0;
+        margin: 1.2rem 0;
         opacity: 0;
         transform: translateX(20px);
         animation: fadeIn 0.4s forwards;
@@ -684,13 +684,14 @@ footer {
     }
     
     .logo h1 {
-            font-size: 1rem;
-            max-width: 150px;
-        }
+    font-size: 1rem; /* Reduz um pouco mais */
+    max-width: 400px; /* Garante que caiba dentro do header */
+    line-height: 1.2; /* Melhor espaçamento */
+}
 
     .menu-toggle {
         display: block;
-        top: 10px;
+        top: 8px;
         right: 10px;
         font-size: 1.5rem;
         padding: 3px;
@@ -813,3 +814,4 @@ footer {
                       rgba(0, 0, 0, 0.8) 100%);
     }
 }
+
