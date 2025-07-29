@@ -224,6 +224,7 @@ section {
     color: var(--primary);
     margin-bottom: 1rem;
     font-size: 1.8rem;
+    text-align: center;
 }
 
 .about-text p {
@@ -256,14 +257,12 @@ section {
 .skills {
     background-color: var(--dark);
     color: var(--white);
-    margin-left: 300px;
-    margin-right: 400px;
 }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.7rem;
 }
 
 .skill-card {
@@ -646,8 +645,7 @@ footer {
     .skills {
     background-color: var(--dark);
     color: var(--white);
-    margin-left: 50px;
-    margin-right: auto;
+
  
 }
     
