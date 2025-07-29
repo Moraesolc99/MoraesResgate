@@ -203,7 +203,7 @@ section {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1700px;
     margin: 0 auto;
 }
 
@@ -212,7 +212,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 2rem;
+    gap: 0;
 }
 
 .about-text {
@@ -232,18 +232,18 @@ section {
 }
 
 .about-image {
-    flex: 1;
+    flex: 0.7;
     min-width: 200px;
     display: flex;
     justify-content: center; /* Centraliza a imagem horizontalmente */
     align-items: center; /* Centraliza verticalmente se necessário */
     overflow: hidden; /* Mantém para cortar possíveis excedentes */
-    padding: 10px 0; /* Adiciona espaço acima/abaixo se necessário */
+    padding: 5px 0; /* Adiciona espaço acima/abaixo se necessário */
 }
 
 .about-image img {
-    width: 57%;
-    height: 450px;
+    width: 55%;
+    height: 550px;
     display: block;
     object-fit: cover; /* Mantém a proporção da imagem */
     border-radius: 5px;
@@ -256,22 +256,24 @@ section {
 .skills {
     background-color: var(--dark);
     color: var(--white);
+    margin-left: 300px;
+    margin-right: 400px;
 }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 1rem;
 }
 
 .skill-card {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-    border: 1px solid var(--primary);
+    transition: transform 0.5s;
+    border: 2px solid var(--primary);
 }
 
 .skill-card:hover {
@@ -641,6 +643,13 @@ footer {
     .hero-content p {
         font-size: 1.2rem;
     }
+    .skills {
+    background-color: var(--dark);
+    color: var(--white);
+    margin-left: 50px;
+    margin-right: auto;
+ 
+}
     
     .about-content, .contact-container {
         flex-direction: column;
@@ -779,7 +788,7 @@ footer {
     
     .about-image {
         margin-top: 2rem;
-        width: 100%;
+        width: 50%;
     }
     
     .about-image img {
@@ -814,4 +823,3 @@ footer {
                       rgba(0, 0, 0, 0.8) 100%);
     }
 }
-
